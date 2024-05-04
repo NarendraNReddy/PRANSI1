@@ -1,15 +1,24 @@
 - name: variables check
   hosts: localhost
   become: yes
-  vars:
-  #  Course: "Devops"
-  #  Trainer: "Siva"
-  #  Duration: "120hours"
-  vars_files:
-  - var.yaml 
+  # vars:
+  # #  Course: "Devops"
+  # #  Trainer: "Siva"
+  # #  Duration: "120hours"
+  # vars_files:
+  # - var.yaml 
+  vars_prompt:
+  - name: USERNAME
+    prompt: "Enter username:::"
+    private: no 
+
+  - name: PASSWORD
+    prompt: "Enter password:::"
+    private: yes  
+
   tasks:
   - name: Data overrider
     # vars:
     # - Course: Terraform
     ansible.builtin.debug:
-      msg: "Files: {{Course}} {{Trainer}} {{Duration}} "
+      msg: "{{USERNAME}} {{PASSWORD}} "
