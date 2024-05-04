@@ -1,0 +1,9 @@
+- name: shell and cmd
+  hosts: web
+  become: no 
+  tasks:
+  - name: shell
+    ansible.builtin.shell: "echo,'Hello,how are you from shell' > /tmp/shell.tx"
+  - name: command
+    ansible.builtin.command: "echo , 'hello,how are you from commadncommand' > /tmp/command.txt"  
+
