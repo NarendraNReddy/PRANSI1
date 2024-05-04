@@ -1,8 +1,8 @@
 - name: var check
   hosts: localhost
   become: no 
-  vars_files:
-    var1.yaml
+  # vars_files:
+  #   var1.yaml
   # vars:
   #   Course: Devops
 
