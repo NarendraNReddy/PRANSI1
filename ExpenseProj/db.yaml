@@ -1,6 +1,13 @@
 - name: configure db
   hosts: db
   become: yes 
+  vars:
+    login_host: db.daws78s-nnr.online
+  vars_prompt:
+  - name: mysql_root_password
+    prompt: "Enter password as : ExpenseApp@1"
+    private: no
+
   tasks:
   - name: install mysql-server
     ansible.builtin.dnf:
@@ -11,4 +18,18 @@
       name: mysqld
       state: started
       enabled: yes
-          
+  #check whether db setup up or not    
+  - name: db setup
+    community.mysql.mysql_info:
+      login_user: root
+      login_password: "{{mysql_root_password}}"
+      login_host: "{{login_host}}"
+    ignore_erros: true
+    register: mysql_connection_output
+
+  - name: sql connection output
+    ansible.builtin.debug:
+      msg: "{{mysql_connection_output}}"   
+      
+
+
