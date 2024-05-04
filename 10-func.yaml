@@ -27,9 +27,9 @@
       msg: "{{greetings | upper}}"
 
   - name: upper case
-  vars:
-    greetings: "Hello madam"
-  ansible.builtin.debug:
-    msg: "{{greetings | lower}}"    
+    vars:
+     greetings: "Hello madam"
+    ansible.builtin.debug:
+     msg: "{{greetings | lower}}"    
 
 
