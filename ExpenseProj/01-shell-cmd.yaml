@@ -3,7 +3,7 @@
   become: no 
   tasks:
   - name: shell
-    ansible.builtin.shell: "echo,Hello,how are you from shell > /tmp/shell.tx"
+    ansible.builtin.shell: "echo:Hello,how are you from shell > /tmp/shell.tx"
   - name: command
-    ansible.builtin.command: "echo , hello,how are you from command > /tmp/command.txt"  
+    ansible.builtin.command: "echo:hello,how are you from command > /tmp/command.txt"  
 
