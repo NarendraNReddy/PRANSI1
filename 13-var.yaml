@@ -5,3 +5,13 @@
   - name: default
     ansible.builtin.debug:
       msg: "{{greetings| default('Ansible')}}"
+
+- name: func check 2
+  hosts: localhost
+  become: no 
+  vars:
+    greetings: "Welcome GM"
+  tasks:
+  - name: lower
+    ansible.builtin.debug:
+      msg: "{{greetings | lower}}"
