@@ -9,7 +9,11 @@
 
   - name: user info
     ansible.builtin.debug:
-      msg: "{{USER}}"  
+      msg: "{{USER}}" 
+
+  - name: useradd expense4
+    ansible.builtin.command: useradd expense4
+    when: USER.rc != 0
 
 
 
