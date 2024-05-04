@@ -70,4 +70,4 @@
   tasks:
   - name: items2dict
     ansible.builtin.debug:
-      msg: "{{list1}}"
+      msg: "{{list1|item2dict}}"
