@@ -7,18 +7,18 @@
   # #  Duration: "120hours"
   # vars_files:
   # - var.yaml 
-  vars_prompt:
-  - name: USERNAME
-    prompt: "Enter username:::"
-    private: no 
+  # vars_prompt:
+  # - name: USERNAME
+  #   prompt: "Enter username:::"
+  #   private: no 
 
-  - name: PASSWORD
-    prompt: "Enter password:::"
-    private: yes  
+  # - name: PASSWORD
+  #   prompt: "Enter password:::"
+  #   private: yes  
 
   tasks:
   - name: Data overrider
     # vars:
     # - Course: Terraform
     ansible.builtin.debug:
-      msg: "{{USERNAME}} {{PASSWORD}} "
+      msg: "{{COURSE}} {{TRAINER}} {{DURATION}}"
