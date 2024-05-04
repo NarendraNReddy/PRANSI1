@@ -1,5 +1,5 @@
 - name: shell and cmd
-  hosts: web
+  hosts: db
   become: no 
   tasks:
   - name: shell
