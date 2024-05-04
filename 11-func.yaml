@@ -6,7 +6,7 @@
     ansible.builtin.debug:
       msg: "{{HELLO|default('Ansible')}}"
 
-- name: lower/upper check
+- name: lower check
   hosts: localhost
   become: no
   vars:
@@ -16,7 +16,7 @@
     ansible.builtin.debug:
       msg: "{{greetings | lower}}"
 
-- name: lower/upper check
+- name: upper check
   hosts: localhost
   become: no
   vars:
@@ -25,4 +25,14 @@
   - name: lower case check
     ansible.builtin.debug:
       msg: "{{greetings | upper}}"
+
+- name: unique
+  hosts: localhost
+  become: no 
+  vars:
+  - numbers: [1,2,3,4,4,3,4,3,4]
+  tasks:
+  - name: unique check
+    ansible.builtin.debug:
+      msg: "{{numbers | unique}}"  
 
