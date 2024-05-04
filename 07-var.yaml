@@ -11,7 +11,7 @@
       AWS: 2
       Linux: 3
       yaml: 5
-    RealProj: ture  
+    RealProj: true  
   tasks:
   - name: var check
     ansible.builtin.debug:
