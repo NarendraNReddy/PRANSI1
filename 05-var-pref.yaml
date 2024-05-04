@@ -1,11 +1,22 @@
 - name: var pref
   hosts: localhost
   become: no 
+  vars:
+   Course: "Hello learning" #string
+   Courses:
+    Java
+    python
+    xml
+   Tools:
+   - AWS
+   - TERRAFORM
+   - LINUX
+
   # vars:
   #   WISHES: "from Playlevel GM Wishes"
-  vars_files:
-    var.yaml  
-  # vars_prompt:
+  # vars_files:
+  #   var.yaml  
+  # # vars_prompt:
   # - name: WISHES
   #   prompt: "Enter as : From prompt GM wishes"
   #   private: no
@@ -16,4 +27,4 @@
     # vars:
     #   WISHES: "From tasklevel GM Wishes"
     ansible.builtin.debug:
-      msg: "{{WISHES}}"
+      msg: "{{Course}} {{Courses}} {{Tools}}"
