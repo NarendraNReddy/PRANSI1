@@ -4,9 +4,9 @@
   vars:
    Course: "Hello learning" #string
    Courses:
-    Java
-    python
-    xml
+    Prog1: Java
+    Prog2: python
+    Prog3: xml
    Tools:
    - AWS
    - TERRAFORM
