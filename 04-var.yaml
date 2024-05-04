@@ -1,0 +1,11 @@
+- name: var check
+  hosts: localhost
+  become: no 
+  vars:
+   Course: "DevOps"
+   Trainer: "Siva"
+   Duration: "120hours"
+  tasks:
+  - name: var check
+    ansible.builtin.debug:
+     msg: "{{Course}} {{Trainer}} {{Duration}}"
