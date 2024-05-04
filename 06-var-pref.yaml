@@ -11,7 +11,7 @@
     var1.yaml  
   tasks:
   - name: var pref check
-    vars:
-      WISHES: "From tasklevel GM wishes"
+    # vars:
+    #   WISHES: "From tasklevel GM wishes"
     ansible.builtin.debug:
      msg: "{{WISHES}}"
