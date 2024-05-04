@@ -1,53 +1,14 @@
-- name: db
-  hosts: db 
-  become: yes
-  vars:
-    login_host: db.daws78s-nnr.online
-  vars_prompt:
-  - name: mysql_root_password
-    prompt: "Please enter my sql root password:ExpenseApp@1 "
-    private: no  
-
+- name: configure db
+  hosts: db
+  become: yes 
   tasks:
-  - name: install mysql server
+  - name: install mysql-server
     ansible.builtin.dnf:
       name: mysql-server
       state: latest
-  - name: enable and start mysql server
+  - name: enble and start mysqld
     ansible.builtin.service:
       name: mysqld
       state: started
       enabled: yes
-
-  - name: install mySQL server python dependencies
-    ansible.builtin.pip:
-      name: 
-      - PyMySQL
-      - cryptography
-      executable: pip3.9   #ansible --version --> python version = 3.9.18
-
-
-
-  # Check password already set up or not. Checking versionof mysql for setup.
-  # like ansible version
-  - name: check db username and password set or not
-    community.mysql.mysql_info:
-      login_user: root
-      login_password: "{{mysql_root_password}}"
-      login_host: "{{login_host}}"
-    ignore_errors: true  
-    register: mysql_connection_output
-
-  - name: print mysql connection output info
-    ansible.builtin.debug:
-      msg: "{{mysql_connection_output}}"   
-
-  #mysql_secure_installation --set-root-pass ExpenseApp@1    
-
-  - name: setup db root password
-    ansible.builtin.command: "mysql_secure_installation --set-root-pass {{mysql_root_password}}"
-    when: mysql_connection_output.failed is true
-
-
-      
-            
+          
