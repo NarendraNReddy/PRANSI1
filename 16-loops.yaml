@@ -1,0 +1,11 @@
+- name: loop1
+  hosts: web
+  become: no 
+  tasks:
+  - name: loops
+    ansible.builtin.debug:
+      msg: "{{item}}"
+    loop:
+    - AWS
+    - Linux
+    - Devops  
