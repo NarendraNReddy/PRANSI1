@@ -8,6 +8,7 @@
   vars_prompt:
   - name: WISHES
     prompt: "Enter as : From prompt GM wishes"
+    private: no
 
   
   tasks:
