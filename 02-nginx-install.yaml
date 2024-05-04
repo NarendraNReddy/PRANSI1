@@ -1,0 +1,14 @@
+- name: install nginx
+  hosts: web
+  become: yes 
+  tasks:
+  - name: install nginx # sudo dnf install nginx -y -- RHEL 
+    ansible.builtin.dnf:
+    - name: nginx 
+    - state: latest
+
+  - name: start nginx #  start and enabled nginx - systemctl start nginx and systemctl enable nginx
+    ansible.builtin.service:
+      - name: nginx 
+      - state: started
+      - enabled: yes   
