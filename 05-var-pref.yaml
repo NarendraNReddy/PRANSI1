@@ -28,4 +28,4 @@
     # vars:
     #   WISHES: "From tasklevel GM Wishes"
     ansible.builtin.debug:
-      msg: "{{Course}} {{Courses}} {{Tools}}"
+      msg: "{{Course}} {{Courses}} {{Tools}} {{RealProj}}"
