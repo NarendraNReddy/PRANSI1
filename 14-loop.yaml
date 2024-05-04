@@ -1,0 +1,11 @@
+- name: loop
+  hosts: web
+  become: no
+  tasks:
+  - name: loop
+    ansible.builtin.debug:
+      msg: "{{items}}"
+    loop:
+    - AWS
+    - XML
+    - YAML  
