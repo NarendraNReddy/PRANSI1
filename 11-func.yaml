@@ -59,15 +59,15 @@
     ansible.builtin.debug:
       msg: "{{Train | dict2items}}"  
 
-- name: items2dict
-  hosts: localhost
-  become: no 
-  vars:
-  -list1:
-    - {"key": "Course","value": "Devops"}
-    - {"key": "Trainer","value": "Siva"}
-    - {"key": "Duration","value": "120hrs"}
-  tasks:
-  - name: items2dict
-    ansible.builtin.debug:
-      msg: "{{list1}}"
+# - name: items2dict
+#   hosts: localhost
+#   become: no 
+#   vars:
+#   -list1:
+#     - {"key": "Course","value": "Devops"}
+#     - {"key": "Trainer","value": "Siva"}
+#     - {"key": "Duration","value": "120hrs"}
+#   tasks:
+#   - name: items2dict
+#     ansible.builtin.debug:
+#       msg: "{{list1}}"
