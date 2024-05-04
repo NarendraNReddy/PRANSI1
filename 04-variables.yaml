@@ -7,5 +7,7 @@
    Duration: "120hours"
   tasks:
   - name: variables print
+    vars:
+    - Course: Terraform
     ansible.builtin.debug:
       msg: "{{Course}} {{Trainer}} {{Duration}} "
