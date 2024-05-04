@@ -11,15 +11,14 @@
     ansible.builtin.debug:
       msg: "{{USER}}"  
 
+  - name: user add
+    ansible.builtin.command: useradd expense
+    when: USER.rc != 0    
+
     
 
   - name: hello
     ansible.builtin.debug:
       msg: "Hello"   
-    register: USER1
-
-  - name: user info
-    ansible.builtin.debug:
-     msg: "{{USER1}}"    
 
 
