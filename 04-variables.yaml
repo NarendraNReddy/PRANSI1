@@ -6,8 +6,11 @@
    Trainer: "Siva"
    Duration: "120hours"
   tasks:
-  - name: variables print
+  - name: Data overrider
     vars:
     - Course: Terraform
     ansible.builtin.debug:
-      msg: "{{Course}} {{Trainer}} {{Duration}} "
+      msg: "Overrider: {{Course}} {{Trainer}} {{Duration}} "
+  - name: Data inheritance    
+    ansible.builtin.debug:
+      msg: "{{Course}}"
