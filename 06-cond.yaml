@@ -19,7 +19,7 @@
     register: USER1
 
   - name: user info
-  ansible.builtin.debug:
-    msg: "{{USER1}}"    
+    ansible.builtin.debug:
+     msg: "{{USER1}}"    
 
 
