@@ -1,8 +1,8 @@
 - name: var pref check
   hosts: localhost
   become: no
-  vars:
-    WISHES: "from playlevel GM wishes"
+  # vars:
+  #   WISHES: "from playlevel GM wishes"
   # vars_prompt:
   # - name: WISHES
   #   prompt: "ENter as from prompt GM wishes"  
