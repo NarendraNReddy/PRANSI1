@@ -4,7 +4,7 @@
   tasks:
   - name: cond check
     ansible.builtin.command: id expense4
-    ignore_erros: true
+    ignore_errors: true
     register: USER
 
 
