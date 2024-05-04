@@ -44,5 +44,18 @@
   tasks:
   - name: min/max
     ansible.builtin.debug:
-      msg: "min:{{numbers | min}}, max: {{numbers | max}}"      
+      msg: "min:{{numbers | min}}, max: {{numbers | max}}"     
+
+- name: dict2items
+  hosts: localhost
+  become: no
+  vars:
+    Train:
+      Course: "Devops"
+      Trainer: "Siva"
+      Duration: "120hrs"
+  tasks:
+  - name: dict2items
+    ansible.builtin.debug:
+      msg: "{{Train}}"  
 
