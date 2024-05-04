@@ -9,4 +9,8 @@
   - name: less than 10
     ansible.builtin.debug:
       msg: "{{number}} is less than 10"
-          
+
+  - name: greater than 10
+    ansible.builtin.debug:
+      msg: "{{number}} is greater than 10"    
+
