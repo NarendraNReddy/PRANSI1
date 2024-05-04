@@ -16,6 +16,13 @@
     ansible.builtin.debug:
       msg: "{{greetings | lower}}"
 
-  - name: upper case check
+- name: lower/upper check
+  hosts: localhost
+  become: no
+  vars:
+    greetings: "Hello GM" 
+  tasks:
+  - name: lower case check
     ansible.builtin.debug:
       msg: "{{greetings | upper}}"
+
