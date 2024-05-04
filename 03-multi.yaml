@@ -1,0 +1,21 @@
+- name: multi layer
+  hosts: localhost
+  become: no 
+  tasks:
+  - name: play 1 task 1
+    ansible.builtin.debug:
+     msg: "Play 1 Task 1"
+  - name: Play 1 task 2
+    ansible.builtin.debug:
+      msg: "Play 1 task2" 
+
+- name: Play 2 task1
+  host: localhost
+  become: no
+  tasks:
+  - name: Play 2 task1
+    ansible.builtin.debug:
+      msg: "Play 2 task1"
+  - name: Play 2 task 2
+    ansible.builtin.debug:
+      msg: " Play 2 task2"    
