@@ -26,4 +26,4 @@
 
   - name: var check overrider  
     ansible.builtin.debug:
-      msg: "{{Course}}{{USERNAME}}{{PASSWORD}}"  
+      msg: "{{WISHES}}"  
