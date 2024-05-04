@@ -10,17 +10,31 @@
 #     - Linux
 #     - Devops  
 
-- name: Loop2
+# - name: Loop2
+#   hosts: web
+#   become: yes 
+#   tasks:
+#   - name: Loop2 test
+#     ansible.builtin.dnf:
+#       name: "{{item}}"
+#       state: latest
+#     loop:
+#     - mysql
+#     - nginx 
+#     - postfix  
+
+- name: Loop3
   hosts: web
   become: yes 
   tasks:
-  - name: Loop2 test
+  - name: Loop3 test
     ansible.builtin.dnf:
-      name: "{{item}}"
-      state: latest
+      name:
+      state:
     loop:
-    - mysql
-    - nginx 
-    - postfix  
+    - {name: 'mysql',state: "absent"}
+    - {name: 'nginx',state: "absent"}  
+    - {name: 'postfix',state: "absent"}
+
     
     
