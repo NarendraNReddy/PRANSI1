@@ -13,7 +13,7 @@
   
   tasks:
   - name: var pref check
-    vars:
-      WISHES: "From tasklevel GM Wishes"
+    # vars:
+    #   WISHES: "From tasklevel GM Wishes"
     ansible.builtin.debug:
       msg: "{{WISHES}}"
