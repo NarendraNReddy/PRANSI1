@@ -10,7 +10,7 @@
       msg: "Play 1 task2" 
 
 - name: Play 2 task1
-  host: localhost
+  hosts: localhost
   become: no
   tasks:
   - name: Play 2 task1
