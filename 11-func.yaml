@@ -63,7 +63,7 @@
   hosts: localhost
   become: no 
   vars:
-  -list1:
+    list1:
     - {"key": "Course","value": "Devops"}
     - {"key": "Trainer","value": "Siva"}
     - {"key": "Duration","value": "120hrs"}
