@@ -20,6 +20,13 @@
       state: started
       enabled: yes
 
+  - name: PyMySQL install
+    ansible.builtin.pip:
+      name: 
+      - PyMySQL
+      - cryptography
+      executable: pip3.9          
+
   #check whether db setup up or not   
   # community.mysql.mysql_info: 
   - name: mysql connection
