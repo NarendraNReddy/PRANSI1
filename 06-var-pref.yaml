@@ -3,10 +3,10 @@
   become: no
   vars:
     WISHES: "from playlevel GM wishes"
-  vars_prompt:
-  - name: WISHES
-    prompt: "ENter as from prompt GM wishes"  
-    private: no 
+  # vars_prompt:
+  # - name: WISHES
+  #   prompt: "ENter as from prompt GM wishes"  
+  #   private: no 
   vars_files:
     var1.yaml  
   tasks:
