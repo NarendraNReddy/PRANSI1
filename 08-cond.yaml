@@ -2,12 +2,12 @@
   hosts: localhost
   become: no 
   tasks:
-  - name: cond check
+  - name: name check
     ansible.builtin.command: id expense4
     ignore_erros: true
     register: USER
-  
-    
+
+
 
   - name: Hello
     ansible.builtin.debug:
