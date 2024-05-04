@@ -19,19 +19,20 @@
       name: mysqld
       state: started
       enabled: yes
-  # #check whether db setup up or not   
-  # # community.mysql.mysql_info: 
-  # - name: mysql connection
-  #   community.mysql.mysql_info:
-  #     login_user: root
-  #     login_password: "{{mysql_root_password}}"
-  #     login_host: "{{login_host}}"
-  #   ignore_erros: true
-  #   register: mysql_connection_output
 
-  # - name: sql connection output
-  #   ansible.builtin.debug:
-  #     msg: "{{mysql_connection_output}}"   
+  #check whether db setup up or not   
+  # community.mysql.mysql_info: 
+  - name: mysql connection
+    community.mysql.mysql_info:
+      login_user: root
+      login_password: "{{mysql_root_password}}"
+      login_host: "{{login_host}}"
+    ignore_errors: true
+    register: mysql_connection_output
+
+  - name: sql connection output
+    ansible.builtin.debug:
+      msg: "{{mysql_connection_output}}"   
       
 
 
