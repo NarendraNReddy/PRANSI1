@@ -57,4 +57,13 @@
   tasks:
   - name: dict2items
     ansible.builtin.debug:
-      msg: "{{dict1|dict2items}}"    
+      msg: "{{dict1|dict2items}}" 
+
+- name: items2dict
+  hosts: localhost
+  become: no
+  vars:
+    list1:
+    - "key": "Course","value": "Devops"
+    - "key": "Trainer","value": "siva"
+    - "key": "Duration","value": "120hours"      
