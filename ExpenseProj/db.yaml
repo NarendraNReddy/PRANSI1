@@ -1,6 +1,9 @@
 - name: db
   hosts: db 
   become: yes
+  vars:
+    login_host: db.daws78s-nnr.online
+
   tasks:
   - name: install mysql server
     ansible.builtin.dnf:
@@ -11,3 +14,19 @@
       name: mysqld
       state: started
       enabled: yes
+
+  # Check password already set up or not. Checking versionof mysql for setup.
+  - name: check db username and password set or not
+    community.mysql.mysql_info:
+      login_user: root
+      login_password: ExpenseApp@1
+      login_host: "{{login_host}}"
+    ignore_erros: true
+    register: mysql_connection_output
+
+  - name: print mysql connection output info
+    ansible.builtin.debug:
+      msg: "{{mysql_connection_output}}"   
+
+      
+            
