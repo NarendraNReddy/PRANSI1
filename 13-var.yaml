@@ -65,8 +65,8 @@
   vars:
     list1:
     - {"key": "Course","value": "Devops"}
-    - {"key": "Trainer","value": "siva"}
-    - {"key": "Duration","value": "120hours"}      
+    - {"key": "Trainer","value": "Siva"}
+    - {"key": "Duration","value": "120hrs"}     
   tasks:
     ansible.builtin.debug:
       msg: "{{list1 | items2dict}}"
