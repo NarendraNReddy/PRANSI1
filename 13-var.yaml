@@ -15,3 +15,13 @@
   - name: lower
     ansible.builtin.debug:
       msg: "{{greetings | lower}}"
+
+- name: func check 3
+  hosts: localhost
+  become: no 
+  vars:
+    greetings: "Welcome GM"
+  tasks:
+  - name: upper
+    ansible.builtin.debug:
+      msg: "{{greetings | upper}}"      
