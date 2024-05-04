@@ -8,7 +8,7 @@
     register: USER
 
   - name: user info
-    ansible.built.debug:
+    ansible.builtin.debug:
       msg: "{{USER}}"  
 
 
