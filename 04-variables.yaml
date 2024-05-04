@@ -2,15 +2,14 @@
   hosts: localhost
   become: yes
   vars:
-   Course: "Devops"
-   Trainer: "Siva"
-   Duration: "120hours"
+  #  Course: "Devops"
+  #  Trainer: "Siva"
+  #  Duration: "120hours"
+  vars_files:
+  - var.yaml 
   tasks:
   - name: Data overrider
-    vars:
-    - Course: Terraform
+    # vars:
+    # - Course: Terraform
     ansible.builtin.debug:
       msg: "Overrider: {{Course}} {{Trainer}} {{Duration}} "
-  - name: Data inheritance    
-    ansible.builtin.debug:
-      msg: "{{Course}}"
