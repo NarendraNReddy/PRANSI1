@@ -3,13 +3,23 @@
   become: no 
   vars:
     Course: Devops
+
+  vars_prompt:
+  - name: USERNAME
+    prompt: "ENter username"
+    private: no 
+
+  - name: PASSWORD
+    prompt: "ENter password:"
+    private: yes  
+
   tasks:
   - name: var check inheritance
     vars: 
       Course: Terraform
     ansible.builtin.debug:
       msg: "{{Course}}"
-      
+
   - name: var check overrider  
     ansible.builtin.debug:
-      msg: "{{Course}}"  
+      msg: "{{Course}}{{USERNAME}}{{PASSWORD}}"  
