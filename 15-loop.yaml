@@ -1,0 +1,12 @@
+- name: loop2
+  hosts: web
+  become: yes
+  tasks:
+  - name: loops
+    ansible.builtin.dnf:
+      name: "{{item}}"
+      state: latest
+    loop:
+    - mysql
+    - nginx
+    - postfix  
