@@ -17,12 +17,12 @@
     when: number | int >= 10    
 
   - name: default value
-    vars:
-     greetings: "Hello madam"
     ansible.builtin.debug:
       msg: "{{HELLO | default('Ansible') }}"  
 
   - name: upper case
+    vars:
+     greetings: "Hello madam"
     ansible.builtin.debug:
       msg: "{{greetings | upper}}"
 
