@@ -1,0 +1,7 @@
+- name: func check
+  hosts: localhost
+  become: no
+  tasks:
+  - name: default
+    ansible.builtin.debug:
+      msg: "{{greetings}}"
