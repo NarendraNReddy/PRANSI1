@@ -32,9 +32,9 @@
       name:
       state:
     loop:
-    - {name: 'mysql',state: "latest"}
-    - {name: 'nginx',state: "latest"}  
-    - {name: 'postfix',state: "latest"}
+    - {name: "mysql",state: "latest"}
+    - {name: "nginx",state: "absent"}  
+    - {name: "postfix",state: "latest"}
 
     
     
