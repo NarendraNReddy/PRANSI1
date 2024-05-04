@@ -32,4 +32,10 @@
     ansible.builtin.debug:
      msg: "{{greetings | lower}}"    
 
+  - name: remove dup
+    vars:
+      numbers: [1,2,3,3,4,4,5,6,6,7,7,8]
+    ansible.builtin.debug:
+      msg: {{numbers | unique }}      
+
 
