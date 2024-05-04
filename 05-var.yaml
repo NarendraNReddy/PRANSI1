@@ -1,0 +1,15 @@
+- name: var check
+  hosts: localhost
+  become: no 
+  vars:
+    Course: Devops
+  tasks:
+  - name: var check inheritance
+    vars: 
+      Course: Terraform
+    ansible.builtin.debug:
+      msg: "{{Course}}"
+      
+  - name: var check overrider  
+    ansible.builtin.debug:
+      msg: "{{Course}}"  

@@ -2,7 +2,7 @@
   hosts: localhost
   become: no 
   vars:
-  - Course: "DevOps"
+    Course: "DevOps"
     Trainer: "Siva"
     Duration: "120hours"
   tasks:
