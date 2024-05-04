@@ -2,9 +2,9 @@
   hosts: localhost
   become: no 
   vars:
-   Course: "DevOps"
-   Trainer: "Siva"
-   Duration: "120hours"
+  - Course: "DevOps"
+    Trainer: "Siva"
+    Duration: "120hours"
   tasks:
   - name: var check
     ansible.builtin.debug:
