@@ -1,22 +1,26 @@
 - name: var check
   hosts: localhost
   become: no 
-  vars:
-    Course: Devops
+  # vars:
+  #   Course: Devops
 
-  vars_prompt:
-  - name: USERNAME
-    prompt: "ENter username"
-    private: no 
+  # vars_prompt:
+  # - name: USERNAME
+  #   prompt: "ENter username"
+  #   private: no 
 
-  - name: PASSWORD
-    prompt: "ENter password:"
-    private: yes  
+
+  # - name: PASSWORD
+  #   prompt: "ENter password:"
+  #   private: yes  
+
+  - vars_files:
+    var1.yaml  
 
   tasks:
   - name: var check inheritance
-    vars: 
-      Course: Terraform
+    # vars: 
+    #   Course: Terraform
     ansible.builtin.debug:
       msg: "{{Course}}"
 
