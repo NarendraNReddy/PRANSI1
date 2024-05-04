@@ -1,6 +1,8 @@
 - name: var check
   hosts: localhost
   become: no 
+  vars_files:
+    var1.yaml
   # vars:
   #   Course: Devops
 
@@ -14,8 +16,6 @@
   #   prompt: "ENter password:"
   #   private: yes  
 
-  - vars_files:
-    var1.yaml  
 
   tasks:
   - name: var check inheritance
