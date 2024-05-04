@@ -64,9 +64,9 @@
   become: no 
   vars:
   -list1:
-    - "key": "Course","value": "Devops"
-    - "key": "Trainer","value": "Siva"
-    - "key": "Duration","value": "120hrs"
+    - {"key": "Course","value": "Devops"}
+    - {"key": "Trainer","value": "Siva"}
+    - {"key": "Duration","value": "120hrs"}
   tasks:
   - name: items2dict
     ansible.builtin.debug:
