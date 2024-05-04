@@ -1,7 +1,17 @@
 - name: func check
-  hosts: web
+  hosts: localhost
   become: no
   tasks:
   - name: default
     ansible.builtin.debug:
       msg: "{{HELLO|default('Ansible')}}"
+
+- name: lower check
+  hosts: localhost
+  become: no
+  vars:
+    greetings: "Hello GM" 
+  tasks:
+  - name: lower case check
+    ansible.builtin.debug:
+      msg: "{{greetings | lower}}"
