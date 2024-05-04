@@ -1,12 +1,25 @@
-- name: loop2
+# - name: loop2
+#   hosts: web
+#   become: yes
+#   tasks:
+#   - name: loops
+#     ansible.builtin.dnf:
+#       name: "{{item}}"
+#       state: latest
+#     loop:
+#     - mysql
+#     - nginx
+#     - postfix  
+
+- name: loop3
   hosts: web
-  become: yes
+  become: yes 
   tasks:
   - name: loops
     ansible.builtin.dnf:
-      name: "{{item}}"
-      state: latest
-    loop:
-    - mysql
-    - nginx
-    - postfix  
+      name: 
+      state:
+    loops:
+      {name: "mysql",state: "latest"} 
+      {name: "nginx",state: "absent"}
+      {name: "postfix",state: "absent"} 
