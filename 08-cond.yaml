@@ -1,6 +1,6 @@
 - name: cond check
   hosts: localhost
-  become: no 
+  become: yes 
   tasks:
   - name: cond check
     ansible.builtin.command: id expense4
