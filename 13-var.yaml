@@ -64,6 +64,6 @@
   become: no
   vars:
     list1:
-    - "key": "Course","value": "Devops"
-    - "key": "Trainer","value": "siva"
-    - "key": "Duration","value": "120hours"      
+    - {"key": "Course","value": "Devops"}
+    - {"key": "Trainer","value": "siva"}
+    - {"key": "Duration","value": "120hours"}      
