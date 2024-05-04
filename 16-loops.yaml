@@ -1,11 +1,26 @@
-- name: loop1
+# - name: loop1
+#   hosts: web
+#   become: no 
+#   tasks:
+#   - name: loops
+#     ansible.builtin.debug:
+#       msg: "{{item}}"
+#     loop:
+#     - AWS
+#     - Linux
+#     - Devops  
+
+- name: Loop2
   hosts: web
-  become: no 
+  become: yes 
   tasks:
-  - name: loops
-    ansible.builtin.debug:
-      msg: "{{item}}"
+  - name: Loop2 test
+    ansible.builtin.dnf:
+      name: "{{item}}"
+      state: latest
     loop:
-    - AWS
-    - Linux
-    - Devops  
+    - mysql
+    - nginx 
+    - postfix  
+    
+    
