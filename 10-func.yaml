@@ -16,35 +16,3 @@
       msg: "{{number}} is greater than 10"
     when: number | int >= 10    
 
-  - name: default value
-    ansible.builtin.debug:
-      msg: "{{HELLO | default('Ansible') }}"  
-
-  - name: upper case
-    vars:
-     greetings: "Hello madam"
-    ansible.builtin.debug:
-      msg: "{{greetings | upper}}"
-
-  - name: upper case
-    hosts: localhost
-    vars:
-     greetings: "Hello madam"
-    tasks:
-    - name: lower 
-      ansible.builtin.debug:
-      msg: "{{greetings | lower}}"    
-
-  - name: remove dup
-    hosts: localhost
-    vars:
-    - numbers: [1,2,2,3,3,4,5,6]
-    tasks:
-    - name: list check
-      ansible.builtin.debug:
-        msg: "{{numbers | unique}}"  
-    
-
-  
-
-

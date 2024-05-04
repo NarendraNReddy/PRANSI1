@@ -1,0 +1,7 @@
+- name: func check
+  hosts: web
+  become: no
+  tasks:
+  - name: default
+    ansible.builtin.debug:
+      msg: "{{HELLO|default('Ansible')}}"
