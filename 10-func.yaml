@@ -27,15 +27,24 @@
       msg: "{{greetings | upper}}"
 
   - name: upper case
+    hosts: localhost
     vars:
      greetings: "Hello madam"
-    ansible.builtin.debug:
-     msg: "{{greetings | lower}}"    
+    tasks:
+    - name: lower 
+      ansible.builtin.debug:
+      msg: "{{greetings | lower}}"    
 
   - name: remove dup
+    hosts: localhost
     vars:
-    - numbers: [1,2,3,3,4,4,5,6,6,7,7,8]
-    ansible.builtin.debug:
-      msg: {{numbers | unique }}      
+    - numbers: [1,2,2,3,3,4,5,6]
+    tasks:
+    - name: list check
+      ansible.builtin.debug:
+        msg: "{{numbers | unique}}"  
+    
+
+  
 
 
