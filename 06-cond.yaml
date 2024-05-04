@@ -1,0 +1,11 @@
+- name: useradd
+  hosts: localhost
+  become: yes 
+  tasks:
+  - name: id expense
+    ansible.builtin.debug:
+      msg: "id expsen check"
+
+  - name: hello
+    ansible.builtin.debug:
+      msg: "Hello"    
