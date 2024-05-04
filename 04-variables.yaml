@@ -3,8 +3,8 @@
   become: yes
   vars:
   - Course: "Devops"
-    Trainer: "Siva"
-    Duration: "120hours"
+  - Trainer: "Siva"
+  - Duration: "120hours"
   tasks:
   - name: variables print
     ansible.builtin.debug:
