@@ -32,6 +32,11 @@
      dest: /app
      remote_src: yes
 
+  - name: run npm in app directory  
+    ansible.builtin.command: npm install
+    args:
+      chdir: /app 
+
 
               
 
