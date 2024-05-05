@@ -7,6 +7,13 @@
 
   - name: enable node js  
     ansible.builtin.command: dnf module enable nodejs:20 -y
+  
+  - name: PyMySQL install
+    ansible.builtin.pip:
+      name: 
+      - PyMySQL
+      - cryptography
+      executable: pip3.9     
 
   - name: dnf install nodejs -y
     ansible.builtin.dnf:
@@ -16,12 +23,12 @@
     - nodejs 
     - mysql  
 
-  - name: PyMySQL install
-    ansible.builtin.pip:
-      name: 
-      - PyMySQL
-      - cryptography
-      executable: pip3.9     
+  # - name: PyMySQL install
+  #   ansible.builtin.pip:
+  #     name: 
+  #     - PyMySQL
+  #     - cryptography
+  #     executable: pip3.9     
 
   - name: uesr add expense # Hetero enerious.Work for all distors. Idemopotent. 
     ansible.builtin.user:
