@@ -77,7 +77,7 @@
 
   - name: dameon reload #systemctl daemon-reload
     ansible.builtin.systemd_service:
-      daemon_reloaded: true
+      daemon_reload: true
   
 
   - name: start service
