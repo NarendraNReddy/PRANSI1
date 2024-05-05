@@ -3,7 +3,7 @@
   become: yes 
   vars:
     login_host: db.daws78s-nnr.online
-    login_password: ExpenseApp@1 
+    mysql_root_password: ExpenseApp@1 
 
   tasks:
   - name: disable node js
@@ -68,9 +68,9 @@
 
   - name: db connection
     community.mysql.mysql_db:
-      login_root: root
-      login_password: "{{login_password}}" 
-      login_host: "{{login_host}}" 
+      login_user: root
+      login_password: "{{mysql_root_password}}"
+      login_host: "{{login_host}}"
       target: /app/schema/backend.sql
       state: import
       name: all
