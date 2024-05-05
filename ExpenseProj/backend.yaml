@@ -1,0 +1,27 @@
+- name: configure backend
+  hosts: backend
+  become: yes 
+  tasks:
+  - name: disable node js
+    ansible.builtin.command: dnf module disable nodejs -y
+
+  - name: enable node js  
+    ansible.builtin.command: dnf module enable nodejs:20 -y
+
+  - name: dnf install nodejs -y
+    ansible.builtin.dnf:
+      name: nodejs 
+      state: latest
+
+  - name: uesr add expense # Hetero enerious.Work for all distors. Idemopotent. 
+    ansible.builtin.user:
+      name: expense
+           
+
+
+
+
+
+
+    
+    
