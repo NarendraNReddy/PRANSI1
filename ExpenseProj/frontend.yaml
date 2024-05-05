@@ -13,3 +13,9 @@
       state: started
       enabled: yes   
 
+  # rm -rf /usr/share/nginx/html/*
+  - name: remove html
+    ansible.builtin.file:
+      path: /usr/share/nginx/htmls 
+      state: absent    
+
