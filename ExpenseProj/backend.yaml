@@ -1,6 +1,10 @@
 - name: configure backend
   hosts: backend
   become: yes 
+  vars:
+    login_host: db.daws78s-nnr.online
+    login_password: ExpenseApp@1 
+
   tasks:
   - name: disable node js
     ansible.builtin.command: dnf module disable nodejs -y
@@ -58,6 +62,19 @@
     ansible.builtin.copy:
      src: backend.service
      dest: /etc/systemd/system/backend.service
+
+  # mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pExpenseApp@1 
+  #< /app/schema/backend.sql   
+
+  - name: db connection
+    community.mysql.mysql_db:
+      login_root: root
+      login_password: "{{login_password}}" 
+      login_host: "{{login_host}}" 
+      target: /app/schema/backend.sql
+      state: import
+
+
 
 
 
